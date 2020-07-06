@@ -1,0 +1,85 @@
+body {
+	background-color: #000;
+	margin:0;
+	overflow: hidden;
+	padding:0;
+}
+.screen {
+	animation-name:colorPulse ;
+	animation-duration: 5s;
+	animation-iteration-count: infinite; /* How many times animation should run*/
+	animation-timing-function: ease-in-out; /* Speed of Animation */
+	font-family: 'Fira Mono' , monospace; /* Generic Family */
+	box-shadow: 0 0 5vmin 1vmin #000 inset; /*h-offset v-offset blur spread color |inset|initial|inherit; */
+	font-size: 20px;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden; /* Scroll Bars and content overflow */
+	padding: 10vmin;
+}
+.screen:before {
+	animation-name: :wave;
+	animation-duration:10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	content: "";
+	height:20vh;
+	position: absolute;
+	left:0;
+	right:0;
+	opacity: 0.5;
+	z-index:1;
+}
+.screen:after {
+	background-image: linear-gradient(transparent, transparent 30px, #222);
+	background-size:4px 4px;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+	position:absolute;
+	content:"";
+	z-index:2;
+	pointer-events: none;
+}
+p:last-child:after {
+	animation-name: blink;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	content: "_";
+}
+/* Not studied yet */
+@keyframes colorPulse {
+  0%, 100% {
+    color:#0c0;
+  }
+  48%, 52% {
+    color:#090;
+  }
+  50% {
+    color:#060;
+  }
+}
+
+@keyframes wave {
+  0% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:-100vh;
+  }
+  48%, 52% {
+    box-shadow:0 -10vh 20vh #090;
+  }
+  50% {
+    box-shadow:0 -10vh 20vh #060;
+  }
+  100% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:200vh;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity:0;
+  }
+}
