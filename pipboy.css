@@ -1,7 +1,7 @@
 body {
 	background-color: #000;
 	margin:0;
-	overflow: hidden;
+	overflow: auto;
 	padding:0;
 }
 .screen {
@@ -13,12 +13,12 @@ body {
 	box-shadow: 0 0 5vmin 1vmin #000 inset; /*h-offset v-offset blur spread color |inset|initial|inherit; */
 	font-size: 20px;
 	height: 100vh;
-	width: 100vw;
+	width: 90vw;
 	overflow: hidden; /* Scroll Bars and content overflow */
-	padding: 10vmin;
+	padding: 100px 1px 100px 1px;
 }
 .screen:before {
-	animation-name: :wave;
+	animation-name:wave;
 	animation-duration:10s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
@@ -63,17 +63,17 @@ p:last-child:after {
 
 @keyframes wave {
   0% {
-    box-shadow:0 -10vh 20vh #0c0;
+    box-shadow:0 -10vh 50vh #0c0;
     top:-100vh;
   }
   48%, 52% {
-    box-shadow:0 -10vh 20vh #090;
+    box-shadow:0 -10vh 50vh #090;
   }
   50% {
-    box-shadow:0 -10vh 20vh #060;
+    box-shadow:0 -10vh 50vh #060;
   }
   100% {
-    box-shadow:0 -10vh 20vh #0c0;
+    box-shadow:0 -10vh 500vh #0c0;
     top:200vh;
   }
 }
